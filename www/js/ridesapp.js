@@ -10,4 +10,8 @@ class ridesApp {
 
     }
 
+    getLabels(){
+        
+    }
+
 } 
