@@ -14,4 +14,12 @@ class ridesApp {
         
     }
 
+    setLabel(id){
+        
+    }
+
+    deleteLabel(){
+
+    }
+
 } 
