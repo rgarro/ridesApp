@@ -26,12 +26,14 @@
  */
 class ridesApp {
 
+     labelsUrl = "labelsUrls";
+
     constructor(){
 console.log("android compilara ...");
     }
 
     getLabels(){
-        
+        console.log("label: "+this.labelsUrl);
     }
 
     setLabel(id){
