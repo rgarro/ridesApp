@@ -25,12 +25,9 @@
                   <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <h1>RidesApp</h1>
-                        <div id="deviceready" class="blink">
-                            <p class="event listening">Connecting to Device</p>
-                            <p class="event received">Device is Ready</p>
-                            <p class="event received result"> - - - </p>
-                        </div>
-                    </div>
+                        <button type="button" id="newRideBtn" class="btn btn-primary"><i class="bi bi-clipboard2-plus"></i></button>
+                        <span class="result"></span>
+                      </div>
                   </div>
                 </div>
                 <div class="accordion-item">
@@ -65,11 +62,14 @@
         <script src="js/index.js"></script>
         <script src="js/ridesapp.js"></script>
         <script>
+           rd = new ridesApp();
           $( document ).ready(function() {
-            rd = new ridesApp();
-            //rd.getLabels();
             rd.runTest();
-          });
+          }).bind(this);
+
+          $("#newRideBtn").on( "click", function() {
+            rd.getLabels();
+          }).bind(this);
         </script>
     </body>
 </html>
