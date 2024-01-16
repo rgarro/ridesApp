@@ -27,9 +27,10 @@
                         <h1>RidesApp</h1>
                         <button type="button" id="newRideBtn" class="btn btn-primary"><i class="bi bi-clipboard2-plus"></i></button>
                         <span class="result"></span>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="rideModal" data-bs-target="#staticBackdrop">
-                          New Ride
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#rideModal">
+                        New Modal
                         </button>
+
                       </div>
                   </div>
                 </div>
@@ -61,7 +62,7 @@
                     
         </div>
         <!-- Modal -->
-        <div class="rideModal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="rideModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
