@@ -16,6 +16,9 @@
       <Cl au="0" df="" nm="ridedate" nu="1">
         <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
+      <Cl au="0" df="true" nm="is_active" nu="1">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
       <UniqueConstraints/>
       <SchTrHis/>
     </Tbl>
@@ -94,7 +97,7 @@
     <TbGl bkCl="ff4c78ff" sch="schemaA" tbl="stacks" x="377" y="241"/>
     <FkGl bkCl="ff000000" childEdge="WEST" nm="schemaA.stacks.fk_stacks_rides" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="PARENT_LINE" x1="166" x2="166" y1="190" y2="282"/>
+        <positionableLine lineRole="PARENT_LINE" x1="166" x2="166" y1="206" y2="282"/>
         <positionableLine lineRole="CHILD_LINE" x1="377" x2="170" y1="286" y2="286"/>
       </positionableLines>
     </FkGl>
