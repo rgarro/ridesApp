@@ -19,6 +19,9 @@
       <Cl au="0" df="true" nm="is_active" nu="1">
         <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
+      <Cl au="0" df="" nm="sport" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="30" sc="null" sg="1" un="0"/>
+      </Cl>
       <UniqueConstraints/>
       <SchTrHis/>
     </Tbl>
@@ -41,6 +44,18 @@
         <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="longitude" nu="0">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="note" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="100" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="barometric" nu="1">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="hearthrate" nu="1">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="weathertemp" nu="1">
         <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Fk deAc="3" nm="fk_stacks_rides" prLkCl="Id" upAc="3">
@@ -97,7 +112,7 @@
     <TbGl bkCl="ff4c78ff" sch="schemaA" tbl="stacks" x="377" y="241"/>
     <FkGl bkCl="ff000000" childEdge="WEST" nm="schemaA.stacks.fk_stacks_rides" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="PARENT_LINE" x1="166" x2="166" y1="206" y2="282"/>
+        <positionableLine lineRole="PARENT_LINE" x1="166" x2="166" y1="222" y2="282"/>
         <positionableLine lineRole="CHILD_LINE" x1="377" x2="170" y1="286" y2="286"/>
       </positionableLines>
     </FkGl>
