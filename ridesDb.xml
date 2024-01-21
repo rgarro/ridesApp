@@ -58,6 +58,18 @@
       <Cl au="0" df="" nm="weathertemp" nu="1">
         <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
+      <Cl au="0" df="" nm="winddir" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="10" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="windspeed" nu="1">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="swelldir" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="10" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="swellheight" nu="1">
+        <DT arr="0" ds="Float" en="" id="6" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
       <Fk deAc="3" nm="fk_stacks_rides" prLkCl="Id" upAc="3">
         <PrTb mn="0" nm="rides" oe="1" sch="schemaA" zr="1"/>
         <CdTb mn="1" nm="stacks" oe="0" sch="schemaA" zr="1"/>
@@ -109,16 +121,16 @@
     </DiaProps>
     <TbGl bkCl="ff4c78ff" sch="schemaA" tbl="rides" x="61" y="100"/>
     <TbGl bkCl="ff4c78ff" sch="schemaA" tbl="types" x="428" y="55"/>
-    <TbGl bkCl="ff4c78ff" sch="schemaA" tbl="stacks" x="377" y="241"/>
+    <TbGl bkCl="ff4c78ff" sch="schemaA" tbl="stacks" x="324" y="196"/>
     <FkGl bkCl="ff000000" childEdge="WEST" nm="schemaA.stacks.fk_stacks_rides" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="PARENT_LINE" x1="166" x2="166" y1="222" y2="282"/>
-        <positionableLine lineRole="CHILD_LINE" x1="377" x2="170" y1="286" y2="286"/>
+        <positionableLine lineRole="PARENT_LINE" x1="166" x2="166" y1="222" y2="237"/>
+        <positionableLine lineRole="CHILD_LINE" x1="324" x2="170" y1="241" y2="241"/>
       </positionableLines>
     </FkGl>
     <FkGl bkCl="ff000000" childEdge="NORTH" nm="schemaA.stacks.fk_stacks_types" parentEdge="SOUTH" positioner="OneLineUserLinkPositioner">
       <positionableLines>
-        <positionableLine lineRole="SINGLE_LINE" x1="494" x2="494" y1="129" y2="241"/>
+        <positionableLine lineRole="SINGLE_LINE" x1="494" x2="494" y1="129" y2="196"/>
       </positionableLines>
     </FkGl>
     <Notes/>
