@@ -22,7 +22,13 @@
 class ridesApp {
 
      labelsUrl = "labelsUrls";
-     testUrl = "https://helloworld-bca576to3a-uc.a.run.app/"
+     testUrl = "https://helloworld-bca576to3a-uc.a.run.app/";
+     atlasUrl = "https://us-east-1.aws.data.mongodb-api.com/app/data-uizjf/endpoint/data/v1/";
+     atlasUser = "rolandogarro4@gmail.com";
+     atlasPassword = "123queso";
+     collection = "Rides";
+     database = "ridesappdb";
+     dataSource = "AtlasCluster";
 
     constructor(){
 //console.log("android compilara ...");
@@ -33,6 +39,11 @@ class ridesApp {
             $(".result").html(data);
             alert("Load was performed. "+ data);
           });
+    }
+
+    getRides(){
+        url = this.atlasUrl + "action/findAll";
+
     }
 
     getLabels(){
