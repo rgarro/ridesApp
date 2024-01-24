@@ -15,7 +15,7 @@
  *                                             SSt  `------'`
  * A football player and his friends travel to the planet Mongo and 
  * find themselves fighting the tyranny of Ming the Merciless to save Earth.
- * mongodb vs firebase
+ * Mongodb vs Firebase
  * Le Cafe Noir Android Company 
  * THIS IS THE PROOF OF CONCEPT OF A PYMES PROPOSAL.  
  * 
@@ -49,6 +49,7 @@ class ridesApp {
             },
             dataType: 'json',
             success: (function (data) {
+                console.log("Je bois le cafe noir ..");
                 console.log(data);//Je bois le cafe noir , monsieur Android mange du pain avec le fromage  ...
             }).bind(this)
         });

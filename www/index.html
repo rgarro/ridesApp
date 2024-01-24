@@ -94,7 +94,10 @@
         <script>
            rd = new ridesApp();
           $( document ).ready(function() {
-            rd.runTest();
+            //rd.runTest();
+            if(!rd.is_authenticated){
+                rd.authenticate();
+            }
           }).bind(this);
 
          /* $("#newRideBtn").on("click", function() {
