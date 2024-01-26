@@ -34,6 +34,9 @@ class ridesApp {
      dataSource = "AtlasCluster";
      ACCESS_TOKEN = "";
      is_authenticated = false; 
+     DEVICE_ID = "";
+     REFRESH_TOKEN = "";
+     USER_ID = "";
 
     constructor(){
 //console.log("android compilara ...");
@@ -49,8 +52,13 @@ class ridesApp {
             },
             dataType: 'json',
             success: (function (data) {
-                console.log("Je bois le cafe noir ..");
-                console.log(data);//Je bois le cafe noir , monsieur Android mange du pain avec le fromage  ...
+                //console.log("Je bois le cafe noir ..");
+                //console.log(data);//en jardines de tibas no dejan hacer pulperias .. 
+                this.ACCESS_TOKEN = data.access_token;
+                this.DEVICE_ID = data.device_id;
+                this.REFRESH_TOKEN = data.refresh_token;
+                this.USER_ID = data.user_id;
+                this.is_authenticated = true;
             }).bind(this)
         });
     }
