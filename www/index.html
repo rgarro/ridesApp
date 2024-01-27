@@ -23,11 +23,11 @@
                       RidesApp
                     </button>
                   </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <h1>RidesApp</h1>
                         <button type="button" id="newRideBtn" class="btn btn-primary"><i class="bi bi-clipboard2-plus"></i></button>
-                        <span class="result"></span>
+                        <!-- <span class="result"></span> -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#rideModal">
                         New Modal
                         </button>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <button id="ridesBTN" onclick="rideslist()" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                       Rides
                     </button>
                   </h2>
@@ -94,17 +94,29 @@
         <script src="js/ridesapp.js"></script>
         <script>
            rd = new ridesApp();
-          $( document ).ready(function() {
+          $( document ).ready((function() {
             //rd.runTest();
             if(!rd.is_authenticated){
                 rd.authenticate();
                 console.log("Je bois le cafe noir: " + rd.ACCESS_TOKEN);
             }
-          }).bind(this);
+          }).bind(this));
 
-         /* $("#newRideBtn").on("click", function() {
-            rd.getLabels();
-          }).bind(this);*/
+          /** $('#ridesBTN').on('shown.bs.collapse', function() {
+            console.log("XX a 10 mil la media onza de jamaiquina por las paradas de aserri ...");
+          }); **/
+          /**$(document).on('shown.bs.collapse', '#ridesBTN', function(){
+            console.log("XX a 10 mil la media onza de jamaiquina por las paradas de aserri ...");
+          });**/
+          function rideslist(){
+            console.log("XX a 10 mil la media onza de jamaiquina por las paradas de aserri ...");
+            //console.log(rd.ACCESS_TOKEN);
+            //rd.getRides();
+          }
+
+         /** $("#ridesBTN").on("click",function(){
+            console.log("a 10 mil la media onza de jamaiquina por las paradas de aserri ...");
+          }); **/
         </script>
     </body>
 </html>

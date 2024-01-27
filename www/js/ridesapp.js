@@ -13,7 +13,7 @@
  *                               |       `._    `.    \
  *                               `._________`-.   `.   `.___
  *                                             SSt  `------'`
- * A football player and his friends travel to the planet Mongo and 
+ * A Football Player and his Friends travel to the planet Mongo and 
  * find themselves fighting the tyranny of Ming the Merciless to save Earth.
  * Mongodb vs Firebase
  * Le Cafe Noir Android Company 
@@ -37,9 +37,10 @@ class ridesApp {
      DEVICE_ID = "";
      REFRESH_TOKEN = "";
      USER_ID = "";
+     rides_list;
 
     constructor(){
-//console.log("android compilara ...");
+//console.log("el android compilara ...");
     }
 
     authenticate(){
@@ -77,16 +78,17 @@ class ridesApp {
             url: find_url,
             type: 'post',
             data: {
-                access_token: 'XXXXXXXXXXXXXXXXXXX'
+                access_token: this.ACCESS_TOKEN
             },
             headers: {
                 "Access-Control-Request-Headers": '*',
                 "Authorization": 'Bearer ' + this.ACCESS_TOKEN
             },
             dataType: 'json',
-            success: function (data) {
+            success: (function (data) {
+                console.log("Je mange le poulet rouge ..");
                 console.log(data);
-            }
+            }).bind(this)
         });
 
     }
