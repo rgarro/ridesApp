@@ -51,6 +51,7 @@ class ridesApp {
                 password: this.atlasPassword
             },
             dataType: 'json',
+            async:false,
             success: (function (data) {
                 //console.log("Je bois le cafe noir ..");
                 //console.log(data);//en jardines de tibas no dejan hacer pulperias .. 
