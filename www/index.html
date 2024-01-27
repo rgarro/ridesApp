@@ -95,16 +95,12 @@
         <script>
            rd = new ridesApp();
           $( document ).ready((function() {
-            //rd.runTest();
             if(!rd.is_authenticated){
                 rd.authenticate();
-                //console.log("Je bois le cafe noir: " + rd.ACCESS_TOKEN);
             }
           }).bind(this));
 
           function rideslist(){
-            //console.log("XX a 10 mil la media onza de jamaiquina por las paradas de aserri ...");
-            //console.log(rd.ACCESS_TOKEN);
             rd.getRides();
           };
 

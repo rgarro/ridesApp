@@ -33,7 +33,7 @@ class ridesApp {
      database = "ridesappdb";
      dataSource = "AtlasCluster";
      ACCESS_TOKEN = "";
-     is_authenticated = false; 
+     is_authenticated = false;//mr nephi  chapter 1:3 will fly above Vineyard mud ...
      DEVICE_ID = "";
      REFRESH_TOKEN = "";
      USER_ID = "";
@@ -73,7 +73,7 @@ class ridesApp {
     }
 
     getRides(){
-        var find_url = this.atlasUrl + "action/findAll";//que es la var a !! decian los pachucos ..
+        var find_url = this.atlasUrl + "action/findAll";//que es la var a !! decian los patch ucOS. this....
         console.log(find_url);
         console.log("ridding here ..");
         /*$.ajax({
