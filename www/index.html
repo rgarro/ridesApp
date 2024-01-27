@@ -98,25 +98,16 @@
             //rd.runTest();
             if(!rd.is_authenticated){
                 rd.authenticate();
-                console.log("Je bois le cafe noir: " + rd.ACCESS_TOKEN);
+                //console.log("Je bois le cafe noir: " + rd.ACCESS_TOKEN);
             }
           }).bind(this));
 
-          /** $('#ridesBTN').on('shown.bs.collapse', function() {
-            console.log("XX a 10 mil la media onza de jamaiquina por las paradas de aserri ...");
-          }); **/
-          /**$(document).on('shown.bs.collapse', '#ridesBTN', function(){
-            console.log("XX a 10 mil la media onza de jamaiquina por las paradas de aserri ...");
-          });**/
           function rideslist(){
-            console.log("XX a 10 mil la media onza de jamaiquina por las paradas de aserri ...");
+            //console.log("XX a 10 mil la media onza de jamaiquina por las paradas de aserri ...");
             //console.log(rd.ACCESS_TOKEN);
-            //rd.getRides();
-          }
+            rd.getRides();
+          };
 
-         /** $("#ridesBTN").on("click",function(){
-            console.log("a 10 mil la media onza de jamaiquina por las paradas de aserri ...");
-          }); **/
         </script>
     </body>
 </html>
