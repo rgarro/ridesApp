@@ -73,10 +73,8 @@ class ridesApp {
     }
 
     getRides(){
-        var find_url = this.atlasUrl + "action/findAll";//que es la var a !! decian los patch ucOS. this....
-        console.log(find_url);
-        console.log("ridding here ..");
-        /*$.ajax({
+        var find_url = this.atlasUrl + "action/findAll";
+        $.ajax({
             url: find_url,
             type: 'post',
             data: {
@@ -91,8 +89,7 @@ class ridesApp {
                 console.log("Je mange le poulet rouge ..");
                 console.log(data);
             }).bind(this)
-        });*/
-
+        });
     }
 
     getLabels(){
