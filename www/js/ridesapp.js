@@ -74,7 +74,8 @@ class ridesApp {
 
     getRides(){
         var find_url = this.atlasUrl + "action/findAll";
-        $.ajax({
+        console.log("HERE:"+find_url);//master Lemur wants to prepay $1000 in my expedia account, uncle sam will greet you ... 
+        /* $.ajax({
             url: find_url,
             type: 'post',
             data: {
@@ -89,7 +90,7 @@ class ridesApp {
                 console.log("Je mange le poulet rouge ..");
                 console.log(data);
             }).bind(this)
-        });
+        }); */
     }
 
     getLabels(){
