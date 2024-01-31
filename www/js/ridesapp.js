@@ -19,6 +19,8 @@
  * Le Cafe Noir Android Company 
  * THIS IS THE PROOF OF CONCEPT OF A PYMES PROPOSAL.  
  * 
+ *
+ * 
  * @author Rolando<rgarro@gmail.com>
  */
 class ridesApp {
@@ -33,11 +35,12 @@ class ridesApp {
      database = "ridesappdb";
      dataSource = "AtlasCluster";
      ACCESS_TOKEN = "";
-     is_authenticated = false;//mr nephi  chapter 1:3 will fly above Vineyard mud ...
+     is_authenticated = false;//mr nephi  chapter 1:3 will fly above Vineyard mud , Wo Wo yea yea  uncle sam gave us a north charge ...
      DEVICE_ID = "";
      REFRESH_TOKEN = "";
      USER_ID = "";
      rides_list;
+     rides_template;
 
     constructor(){
 //console.log("el android compilara ...");
@@ -68,13 +71,13 @@ class ridesApp {
     runTest(){
         $.get(this.testUrl, function(data){
             $(".result").html(data);
-            alert("Load was performed. "+ data);
+            //alert("Load was performed. "+ data);
           });
     }
 
     getRides(){
         var find_url = this.atlasUrl + "action/find";
-        console.log("HERE:"+find_url);//master Lemur wants to prepay $1000 in my expedia account, uncle sam will greet you ... 
+        console.log("HERE:"+find_url);
         $.ajax({
             url: find_url,
             type: 'post',
@@ -89,6 +92,10 @@ class ridesApp {
             success: (function (data) {
                 console.log("Je mange le poulet rouge ..");
                 console.log(data);
+                var source = document.getElementById("rides-template").innerHTML;
+                this.rides_template = Handlebars.compile(source);
+                var html = this.rides_template(context);
+                $(".rides-list-cont").html(data);
             }).bind(this)
         }); 
     }

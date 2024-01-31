@@ -7,14 +7,12 @@
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <meta name="color-scheme" content="light dark">
         <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    
         <link rel="stylesheet" href="css/index.css">
         <link rel="icon" href="favicon.ico">
         <title>Rides App</title>
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="js/handlebars.min-v4.7.8.js"></script>
-        
       </head>
     <body>
         <div class="container-fluid">
@@ -45,6 +43,7 @@
                   </h2>
                   <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
+                      <div class="rides-list-cont">xxx</div>
                       <strong>This is the second item's accordion body.</strong> 
                     </div>
                   </div>
@@ -91,6 +90,13 @@
             </div>
           </div>
         </div> 
+        <script id="rides-template" type="text/x-handlebars-template">
+          {{#each rides}}
+          <div class="ride-line">
+              {{name}} {{ridedate}} {{is_active}} {{sport}}
+          </div>
+          {{/each}}
+        </script>
         <script src="cordova.js"></script>
         <script src="js/index.js"></script>
         <script src="js/ridesapp.js"></script>
