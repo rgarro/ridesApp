@@ -35,7 +35,7 @@ class ridesApp {
      database = "ridesappdb";
      dataSource = "AtlasCluster";
      ACCESS_TOKEN = "";
-     is_authenticated = false;//mr nephi  chapter 1:3 will fly above Vineyard mud , Wo Wo yea yea  uncle sam gave us a north charge ...
+     is_authenticated = false;//mr nephi  chapter 1:3 will fly above Vineyard mud..
      DEVICE_ID = "";
      REFRESH_TOKEN = "";
      USER_ID = "";
