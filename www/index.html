@@ -105,12 +105,12 @@
           $( document ).ready((function() {
             if(!rd.is_authenticated){
                 rd.authenticate();
-                //console.log(rd.ACCESS_TOKEN);
+                console.log(rd.ACCESS_TOKEN);
             }
           }).bind(this));
 
           function rideslist(){
-            //console.log("rideslist");
+            console.log("rideslist");
             rd.getRides();
           };
 

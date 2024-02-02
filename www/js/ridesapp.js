@@ -1,10 +1,10 @@
 /**
- *                     `. ___
- *                    __,' __`.                _..----....____
- *        __...--.'``;.   ,.   ;``--..__     .'    ,-._    _.-'
- *  _..-''-------'   `'   `'   `'     O ``-''._   (,;') _,'
- *,'________________                          \`-._`-','
- * `._              ```````````------...___   '-.._'-:
+ *                      `. ___
+ *                     __,' __`.                _..----....____
+ *         __...--.'``;.   ,.   ;``--..__     .'    ,-._    _.-'
+ *   _..-''-------'   `'   `'   `'     O ``-''._    ,;') _,'
+ * ,'________________                          \`-._`-','
+ *  `._              ```````````------...___   '-.._'-:
  *    ```--.._      ,.                     ````--...__\-.
  *            `.--. `-`                       ____    |  |`
  *              `. `.                       ,'`````.  ;  ;`
@@ -71,7 +71,7 @@ class ridesApp {
     runTest(){
         $.get(this.testUrl, function(data){
             $(".result").html(data);
-            //alert("Load was performed. "+ data);
+            alert("Load was performed. "+ data);
           });
     }
 
@@ -92,10 +92,10 @@ class ridesApp {
             success: (function (data) {
                 console.log("Je mange le poulet rouge ..");
                 console.log(data);
-                var source = document.getElementById("rides-template").innerHTML;
-                this.rides_template = Handlebars.compile(source);
-                var html = this.rides_template(context);
-                $(".rides-list-cont").html(data);
+                //var source = document.getElementById("rides-template").innerHTML;
+                //this.rides_template = Handlebars.compile(source);
+                //var html = this.rides_template(context);
+                //$(".rides-list-cont").html(data);
             }).bind(this)
         }); 
     }
