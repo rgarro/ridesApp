@@ -27,6 +27,8 @@ class ridesApp {
 
      labelsUrl = "labelsUrls";
      testUrl = "https://helloworld-bca576to3a-uc.a.run.app/";
+     //https://us-east-1.aws.data.mongodb-api.com/app/data-uizjf/endpoint/data/v1
+     //https://us-east-1.aws.data.mongodb-api.com/app/data-uizjf/endpoint/data/v1
      atlasUrl = "https://us-east-1.aws.data.mongodb-api.com/app/data-uizjf/endpoint/data/v1/";
      atlasAuthUrl = "https://realm.mongodb.com/api/client/v2.0/app/data-uizjf/auth/providers/local-userpass/login";
      atlasUser = "rolandogarro4@gmail.com";
@@ -41,6 +43,8 @@ class ridesApp {
      USER_ID = "";
      rides_list;
      rides_template;
+     privateKey = "2e6e32a6-e65d-4a3a-a25e-74f6d5dfd851";
+     publicKey = "gydalonr";
 
     constructor(){
 //console.log("el android compilara ...");
