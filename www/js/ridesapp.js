@@ -45,6 +45,8 @@ class ridesApp {
      rides_template;
      privateKey = "2e6e32a6-e65d-4a3a-a25e-74f6d5dfd851";
      publicKey = "gydalonr";
+    mayapikey = "j78V0iGxREyDTzbV4BLid2IdbC8RGidekEYviWAmYeOTFjtwxbmg1Yfo65wsgrTC";
+
 
     constructor(){
 //console.log("el android compilara ...");
@@ -86,13 +88,18 @@ class ridesApp {
             url: find_url,
             type: 'post',
             data: {
-                access_token: this.ACCESS_TOKEN
+                collection:"Rides",
+                database:"ridesappdb",
+                dataSource:"AtlasCluster"
+                //access_token: this.ACCESS_TOKEN
             },
             headers: {
-                "Access-Control-Request-Headers": '*',
-                "Authorization": 'Bearer ' + this.ACCESS_TOKEN
+                "Content-Type": "application/json",
+                "Access-Control-Request-Headers": "*",
+                "Authorization": "Bearer " + this.ACCESS_TOKEN
             },
             dataType: 'json',
+            //crossDomain: true,
             success: (function (data) {
                 console.log("Je mange le poulet rouge ..");
                 console.log(data);
@@ -100,7 +107,11 @@ class ridesApp {
                 //this.rides_template = Handlebars.compile(source);
                 //var html = this.rides_template(context);
                 //$(".rides-list-cont").html(data);
-            }).bind(this)
+            }).bind(this),
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+             console.log("Error getRides - Status: " + textStatus + "    Error:" + errorThrown);
+             //throw tomorrow then write catcher..
+            }
         }); 
     }
 

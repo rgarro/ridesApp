@@ -26,6 +26,7 @@
                   <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <h1>RidesApp</h1>
+                        <span id="deviceready" class="">- off -</span>
                         <button type="button" id="newRideBtn" class="btn btn-outline-primary"><i class="bi-ying-yang"></i> +</button>
                         <!-- <span class="result"></span> -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#rideModal">
@@ -101,6 +102,7 @@
         <script src="js/index.js"></script>
         <script src="js/ridesapp.js"></script>
         <script>
+          //try - catch -- a wave ...
            rd = new ridesApp();
           $( document ).ready((function() {
             if(!rd.is_authenticated){
