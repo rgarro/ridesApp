@@ -98,6 +98,7 @@ class ridesApp {
                 "Access-Control-Request-Headers":"*", 
                 "Content-Type": "application/json",
                 "Accept": "application/json",
+                "Authorization": "Bearer " + this.ACCESS_TOKEN,
                 "apiKey": this.mayapikey,
                 "api-key": this.mayapikey,
             },
