@@ -94,9 +94,12 @@ class ridesApp {
                 //access_token: this.ACCESS_TOKEN
             },
             headers: {
+                //"Authorization": "Bearer " + this.ACCESS_TOKEN
+                'Access-Control-Request-Headers: *', 
                 "Content-Type": "application/json",
-                "Access-Control-Request-Headers": "*",
-                "Authorization": "Bearer " + this.ACCESS_TOKEN
+                "Accept": "application/json",
+                "apiKey": this.mayapikey,
+                "api-key": this.mayapikey,
             },
             dataType: 'json',
             //crossDomain: true,
@@ -110,7 +113,7 @@ class ridesApp {
             }).bind(this),
             error: function (XMLHttpRequest, textStatus, errorThrown) {
              console.log("Error getRides - Status: " + textStatus + "    Error:" + errorThrown);
-             //throw tomorrow then write catcher..
+             //throw tomorrow then write catcher..catcher in the rye two bucks the throw, expelled from pencey .. 
             }
         }); 
     }
