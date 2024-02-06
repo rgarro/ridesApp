@@ -103,7 +103,7 @@ class ridesApp {
                 "api-key": this.mayapikey,
             },
             dataType: 'json',
-            //crossDomain: true,
+            crossDomain: true,
             success: (function (data) {
                 console.log("Je mange le poulet rouge ..");
                 console.log(data);
