@@ -46,13 +46,30 @@ class ridesApp {
      privateKey = "2e6e32a6-e65d-4a3a-a25e-74f6d5dfd851";
      publicKey = "gydalonr";
     mayapikey = "j78V0iGxREyDTzbV4BLid2IdbC8RGidekEYviWAmYeOTFjtwxbmg1Yfo65wsgrTC";
+    REALM_PID = "65aea7dcf39cfd0112e90472";
+    REALM_APP;
 
 
     constructor(){
-//console.log("el android compilara ...");
+//console.log("el android compilara ...");//malparido cors del rest dbapi ..
+        this.REALM_APP = new Realm.App({ id: this.REALM_PID });
+        console.log("realm:"+this.REALM_APP);
+    }
+
+    async myRealmAuthenticate(){
+        console.log("start realm auth:");
+        const credentials = Realm.Credentials.emailPassword(this.atlasUser,this.atlasPassword);
+        // Authenticate the user
+        const user = await this.REALM_APP.logIn(credentials);
+        // App.currentUser updates to match the logged in user
+        console.log(user.id === this.REALM_APP.currentUser.id);
     }
 
     authenticate(){
+        this.myRealmAuthenticate();
+    }
+
+    ajaxAuthenticate(){
         $.ajax({
             url: this.atlasAuthUrl,
             type: 'post',
