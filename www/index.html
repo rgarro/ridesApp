@@ -93,11 +93,14 @@
           </div>
         </div> 
         <script id="rides-template" type="text/x-handlebars-template">
-          {{#each rides}}
-          <div class="ride-line">
-              {{name}} {{ridedate}} {{is_active}} {{sport}}
-          </div>
-          {{/each}}
+          <ul class="list-group">
+            {{#each rides}}
+            <li class="list-group-item">
+            {{name}} {{ridedate}} {{is_active}} {{sport}}
+            <button type="button" class="btn btn-primary btn-sm" onclick="deactivateRide('{{_id}}')">DeActivate</button>
+            </li>
+          {{/each}} 
+          </ul>
         </script>
         <script src="cordova.js"></script>
         <script src="js/index.js"></script>
@@ -108,14 +111,18 @@
           $( document ).ready((function() {
             if(!rd.is_authenticated){
                 rd.authenticate();
-                console.log(rd.ACCESS_TOKEN);
+                //console.log(rd.ACCESS_TOKEN);
             }
           }).bind(this));
 
           function rideslist(){
-            console.log("rideslist");
+            //console.log("rideslist");
             rd.getRides();
           };
+
+          function deactivateRide(id){
+              console.log(id);
+          }
 
         </script>
     </body>
