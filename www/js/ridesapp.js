@@ -46,23 +46,30 @@ class ridesApp {
      privateKey = "2e6e32a6-e65d-4a3a-a25e-74f6d5dfd851";
      publicKey = "gydalonr";
     mayapikey = "j78V0iGxREyDTzbV4BLid2IdbC8RGidekEYviWAmYeOTFjtwxbmg1Yfo65wsgrTC";
-    REALM_PID = "65aea7dcf39cfd0112e90472";
-    REALM_APP;
+    REALM_PID = "data-uizjf";//"65aea7dcf39cfd0112e90472";
+    REALM_APP;//ridesappdb-ffygd
+    mongodb;
+    user;
 
 
     constructor(){
-//console.log("el android compilara ...");//malparido cors del rest dbapi ..
+//console.log("el android compilara ...");
         this.REALM_APP = new Realm.App({ id: this.REALM_PID });
         console.log("realm:"+this.REALM_APP);
     }
 
     async myRealmAuthenticate(){
         console.log("start realm auth:");
-        const credentials = Realm.Credentials.emailPassword(this.atlasUser,this.atlasPassword);
+        //const credentials = Realm.Credentials.emailPassword(this.atlasUser,this.atlasPassword);
+        // Create an API Key credential
+        const credentials = Realm.Credentials.apiKey(this.mayapikey);
         // Authenticate the user
-        const user = await this.REALM_APP.logIn(credentials);
+        this.user = await this.REALM_APP.logIn(credentials);
         // App.currentUser updates to match the logged in user
-        console.log(user.id === this.REALM_APP.currentUser.id);
+        console.log(this.user);
+        this.mongodb = this.user.mongoClient(this.dataSource);
+        console.log(this.mongodb);
+        this.is_authenticated = true;
     }
 
     authenticate(){
@@ -98,42 +105,15 @@ class ridesApp {
           });
     }
 
-    getRides(){
-        var find_url = this.atlasUrl + "action/find";
-        console.log("HERE:"+find_url);
-        $.ajax({
-            url: find_url,
-            type: 'post',
-            data: {
-                collection:"Rides",
-                database:"ridesappdb",
-                dataSource:"AtlasCluster"
-                //access_token: this.ACCESS_TOKEN
-            },
-            headers: {
-                //"Authorization": "Bearer " + this.ACCESS_TOKEN
-                "Access-Control-Request-Headers":"*", 
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-                "Authorization": "Bearer " + this.ACCESS_TOKEN,
-                "apiKey": this.mayapikey,
-                "api-key": this.mayapikey,
-            },
-            dataType: 'json',
-            crossDomain: true,
-            success: (function (data) {
-                console.log("Je mange le poulet rouge ..");
-                console.log(data);
-                //var source = document.getElementById("rides-template").innerHTML;
-                //this.rides_template = Handlebars.compile(source);
-                //var html = this.rides_template(context);
-                //$(".rides-list-cont").html(data);
-            }).bind(this),
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-             console.log("Error getRides - Status: " + textStatus + "    Error:" + errorThrown);
-             //throw tomorrow then write catcher..catcher in the rye two bucks the throw, expelled from pencey .. 
-            }
-        }); 
+    async getRides(){
+        console.log("Je mange le poulet rouge ..");
+        const ridesCollection = this.mongodb.db(this.database).collection("Rides");
+        const ridesData = await ridesCollection.find({is_active : true});
+console.log(ridesData);
+        //var source = document.getElementById("rides-template").innerHTML;
+        //this.rides_template = Handlebars.compile(source);
+        //var html = this.rides_template(context);
+        //$(".rides-list-cont").html(data);
     }
 
     getLabels(){
