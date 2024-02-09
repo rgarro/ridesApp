@@ -18,7 +18,7 @@
  * Mongodb vs Firebase
  * Le Cafe Noir Android Company 
  * THIS IS THE PROOF OF CONCEPT OF A PYMES PROPOSAL.  
- * 
+ * Realm mato a Firebase, lo ahorcaron en arboria
  *
  * 
  * @author Rolando<rgarro@gmail.com>
@@ -111,10 +111,10 @@ class ridesApp {
         const ridesCollection = this.mongodb.db(this.database).collection("Rides");
         var ridesData = await ridesCollection.find({is_active : true});
         for (var i = 0; i < ridesData.length; i++) { 
-            const date = new Date(ridesData[i].ridedate * 1000);
+            const date = new Date(ridesData[i].ridedate.high * 1000);
             ridesData[i].fixedDate = date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate()+ " " +date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
           }
- console.log(ridesData);         
+        //console.log(ridesData);         
         var html = this.rides_template({rides:ridesData});        
         $(".rides-list-cont").html(html);
     }

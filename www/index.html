@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="css/index.css">
         <link rel="icon" href="favicon.ico">
         <title>Rides App</title>
+        <script src="js/3745bba581.js" crossorigin="anonymous"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/realm-web.js"></script>
         <script src="js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -26,12 +27,11 @@
                   </h2>
                   <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <h1>RidesApp</h1>
-                        <span id="deviceready" class="">- off -</span>
-                        <button type="button" id="newRideBtn" class="btn btn-outline-primary"><i class="bi-ying-yang"></i> +</button>
+                        <span id="deviceready" class="small">- off -</span><br>
+                        <button type="button" id="newRideBtn" class="btn btn-outline-primary"><i class="fa-solid fa-bolt"></i></button>
                         <!-- <span class="result"></span> -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#rideModal">
-                        New Modal
+                          <i class="fa-solid fa-bicycle"></i>
                         </button>
 
                       </div>
@@ -46,7 +46,6 @@
                   <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                       <div class="rides-list-cont">xxx</div>
-                      <strong>This is the second item's accordion body.</strong> 
                     </div>
                   </div>
                 </div>
@@ -96,8 +95,10 @@
           <ul class="list-group">
             {{#each rides}}
             <li class="list-group-item">
-            {{name}} {{ridedate}} {{is_active}} {{sport}}
-            <button type="button" class="btn btn-primary btn-sm" onclick="deactivateRide('{{_id}}')">DeActivate</button>
+            <span class="badge text-bg-primary">{{name}}</span>
+             <span class="badge text-bg-warning">{{fixedDate}}</span> {{is_active}} 
+             <span class="badge text-bg-success">{{sport}}</span>
+            <button type="button" class="btn btn-primary btn-sm" onclick="deactivateRide('{{_id}}')"><i class="fa-solid fa-wrench"></i></button>
             </li>
           {{/each}} 
           </ul>
