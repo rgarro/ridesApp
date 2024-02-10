@@ -13,5 +13,9 @@ describe("ridesApp",function(){
 	it("should have init method",function(){
         expect(rd.authenticate).toBeFunction();
     });
+
+    it("should have getRides method",function(){
+        expect(rd.getRides).toBeFunction();
+    });
 	
 });

@@ -73,20 +73,26 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <form>
+                <form id="rideFRM">
   <fieldset>
     <legend>Ride</legend>
     <div class="mb-3">
-      <label for="rideNameID" class="form-label">Name</label>
-      <input type="text" id="rideNameID" name="name" class="form-control" />
+      <label for="rideNameInput" class="form-label">Name</label>
+      <input type="text" id="rideNameInput" name="name" class="form-control" required="required" placeholder="volcano hike" />
       <input type="hidden" name="ridedate" value=""/>
+    </div>
+    <div class="mb-3">
+      <label for="rideSportInput" class="form-label">Name</label>
+      <select id="rideSportInput" name="sport">
+        <option>Hiking</option>
+      </select>
     </div>  
   </fieldset>
   </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Understood</button>
+                <button type="button" class="btn btn-primary">Save</button>
               </div>
             </div>
           </div>
@@ -108,12 +114,20 @@
         <script src="js/ridesapp.js"></script>
         <script>
           //try - catch -- a wave ...
-           rd = new ridesApp();
+          try {
+            rd = new ridesApp();
           $( document ).ready((function() {
             if(!rd.is_authenticated){
                 rd.authenticate();
                 //console.log(rd.ACCESS_TOKEN);
             }
+          }).bind(this));
+
+          $(document).on("submit","#rideFRM",(function(data){
+            console.log("== submit ==");
+            console.log(data);
+            rd.newRide(data);
+              return false;
           }).bind(this));
 
           function rideslist(){
@@ -124,7 +138,11 @@
           function deactivateRide(id){
               console.log(id);
           }
-
+      
+          } catch (e) {
+            console.log("catching error..");
+            console.log(e); // "TypeError"
+          }
         </script>
     </body>
 </html>

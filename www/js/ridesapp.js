@@ -67,7 +67,7 @@ class ridesApp {
         // Create an API Key credential
         const credentials = Realm.Credentials.apiKey(this.mayapikey);
         // Authenticate the user
-        this.user = await this.REALM_APP.logIn(credentials);
+        this.user = await this.REALM_APP.logIn(credentials);//throw new Error("oops");
         // App.currentUser updates to match the logged in user
         this.mongodb = this.user.mongoClient(this.dataSource);
         this.is_authenticated = true;
@@ -119,8 +119,12 @@ class ridesApp {
         $(".rides-list-cont").html(html);
     }
 
+    async newRide(rideObject){
+console.log();
+    }
+
     getLabels(){
-        console.log("label: "+this.labelsUrl  );
+        
     }
 
     setLabel(id){
