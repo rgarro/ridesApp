@@ -51,10 +51,9 @@ class ridesApp {
 
 
     constructor(){
-        //console.log("el android compilara ...");//que ladre el DES(madre)
-        this.REALM_APP = new Realm.App({ id: this.REALM_PID });
+        //console.log("el android compilara ...");
+        this.REALM_APP = new Realm.App({ id: this.REALM_PID });//que ladre el DES(madre)
         //console.log("realm:"+this.REALM_APP);
-        this.compileTemplates();
     }
 
     compileTemplates(){
@@ -88,8 +87,6 @@ class ridesApp {
             dataType: 'json',
             async:false,
             success: (function (data) {
-                //console.log("Je bois le cafe noir ..");
-                //console.log(data);//en jardines de tibas no dejan hacer pulperias .. 
                 this.ACCESS_TOKEN = data.access_token;
                 this.DEVICE_ID = data.device_id;
                 this.REFRESH_TOKEN = data.refresh_token;
@@ -120,7 +117,13 @@ class ridesApp {
     }
 
     async newRide(rideObject){
-console.log();
+        //console.log("xnew ride ...");
+        //console.log(rideObject.name);
+        //console.log(typeof rideObject);
+        //console.log(rideObject);
+        const ridesCollection = this.mongodb.db(this.database).collection("Rides");
+        const result = await ridesCollection.insertOne(rideObject);
+          console.log(result);
     }
 
     getLabels(){
