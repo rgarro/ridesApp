@@ -18,7 +18,6 @@
  * Mongodb vs Firebase
  * Le Cafe Noir Android Company 
  * THIS IS THE PROOF OF CONCEPT OF A PYMES PROPOSAL.  
- * Realm mato a Firebase, lo ahorcaron en arboria
  *
  * 
  * @author Rolando<rgarro@gmail.com>
