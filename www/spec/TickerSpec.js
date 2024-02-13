@@ -12,6 +12,7 @@
     const rideID = "";
 
     it("should be testable",function(){
+        console.log(typeof rd.mongodb.db(rd.database));//quicho es playo ..
         expect(true).toBeTrue();
     });
 
