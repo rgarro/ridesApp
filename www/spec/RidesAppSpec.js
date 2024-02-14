@@ -1,6 +1,5 @@
 /**
- *
- * uncle sam owns snowbird , mr lehi with all mighty starcruiser ..
+ * Uncle sam owns snowbird , mr lehi with all mighty starcruiser ..
  * lemur and laman will abandon jerusalem before defend it
  * 
  * 

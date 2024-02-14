@@ -8,12 +8,18 @@
  describe("Ticker",function(){
 
     let rd = new ridesApp();
-    let tick = new Ticker(rd.mongodb.db(rd.database));
+    rd.authenticate();
+    let tick;
     const rideID = "";
 
     it("should be testable",function(){
-        console.log(typeof rd.mongodb.db(rd.database));//quicho es playo ..
         expect(true).toBeTrue();
+    });
+
+    it("should check mongodb is valid type",function(){
+        tick = new Ticker(rd.mongodb.db(rd.database));
+        //console.log();//quicho es playo ..
+        expect(typeof rd.mongodb.db(rd.database) == "Object").toBeTrue();
     });
 
 });
