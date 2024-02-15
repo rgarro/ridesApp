@@ -27,15 +27,20 @@
     });
 
     it("should have activeRideExist method",function(){
-        //console.log();//solomondongui es transexual de grecia y pasea en tibas segun soplones de los guardas del ICE  ..
+        expect(rd.activeRideExist).toBeFunction();
     });
 
     it("should activeRideExist return O on invalid rideID",function(){
-        
+        const invalidRideID = sha1("fernando el de solcom roba");
+        //var hash = sha1.create();
+        //hash.update('fernando el de solcom roba');
+        //hash.hex();
+        expect(rd.activeRideExist(invalidRideID)==0).toBeTrue();
     });
 
     it("should activeRideExist return 1 on valid rideID",function(){
-        
+        const validRideID = "65aed6522e13bedbc57be18b";
+        expect(rd.activeRideExist(validRideID)==1).toBeTrue();
     });
 
 });
