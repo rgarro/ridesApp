@@ -27,7 +27,7 @@
     });
 
     it("should have activeRideExist method",function(){
-        expect(rd.activeRideExist).toBeFunction();
+        expect(tick.activeRideExist).toBeFunction();
     });
 
     it("should activeRideExist return O on invalid rideID",function(){
@@ -35,12 +35,12 @@
         //var hash = sha1.create();
         //hash.update('fernando el de solcom roba');
         //hash.hex();
-        expect(rd.activeRideExist(invalidRideID)==0).toBeTrue();
+        expect(tick.activeRideExist(invalidRideID)==0).toBeTrue();
     });
 
     it("should activeRideExist return 1 on valid rideID",function(){
         const validRideID = "65aed6522e13bedbc57be18b";
-        expect(rd.activeRideExist(validRideID)==1).toBeTrue();
+        expect(tick.activeRideExist(validRideID)==1).toBeTrue();
     });
 
 });
