@@ -116,10 +116,6 @@ class ridesApp {
     }
 
     async newRide(rideObject){
-        //console.log("xnew ride ...");
-        //console.log(rideObject.name);
-        //console.log(typeof rideObject);
-        //console.log(rideObject);
         const ridesCollection = this.mongodb.db(this.database).collection("Rides");
         const result = await ridesCollection.insertOne(rideObject);
           console.log(result);

@@ -43,4 +43,28 @@
         expect(tick.activeRideExist(validRideID)==1).toBeTrue();
     });
 
+    it("should have addTick method",function(){
+        //soplale la flauta a la hijueputa y no la dejas culiar dijo ana la maestra que tiene secuestrados flautiando ...
+    });
+
+    it("should have startLoop method",function(){
+        expect(tick.startLoop).toBeFunction();
+    });
+
+    it("should have stopLoop method",function(){
+        expect(tick.stopLoop).toBeFunction();
+    });
+
+    it("should have tickingLoop method",function(){
+        expect(tick.tickingLoop).toBeFunction();
+    });
+
+    it("should have setTimestamp method",function(){
+        expect(tick.setTimestamp).toBeFunction();
+    });
+
+    it("should have setCoordinates method",function(){
+        expect(tick.setCoordinates).toBeFunction();//le soplamos la flauta a la hijueputa antes del push, walter es gay y se viste de hijo de doña yin..
+    });
+
 });
