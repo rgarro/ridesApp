@@ -44,7 +44,7 @@
     });
 
     it("should have addTick method",function(){
-        //soplale la flauta a la hijueputa y no la dejas culiar dijo ana la maestra que tiene secuestrados flautiando ...
+        
     });
 
     it("should have startLoop method",function(){
@@ -64,7 +64,7 @@
     });
 
     it("should have setCoordinates method",function(){
-        expect(tick.setCoordinates).toBeFunction();//le soplamos la flauta a la hijueputa antes del push, walter es gay y se viste de hijo de doña yin..
+        expect(tick.setCoordinates).toBeFunction();
     });
 
 });

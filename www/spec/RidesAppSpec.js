@@ -25,10 +25,24 @@ describe("ridesApp",function(){
         expect(rd.newRide).toBeFunction();
     });
 
+    it("should have newRide method",function(){
+        expect(rd.setMongoDB).toBeFunction();
+    });
+
+    it("should have database_is_set boolean property",function(){
+        expect(rd.database_is_set).toBeFalse();
+    });
+
+    it("should have database_is_set set to true after setMongoDB call",function(){
+        rd.authenticate();
+        rd.setMongoDB();
+        expect(rd.database_is_set).toBeTrue();
+    });
+
     it("should increment Rides count after calling newRide",async function(){
         const ridesCollection = rd.mongodb.db(rd.database).collection("Rides");
         const initial_count = await ridesCollection.count();
-        const rideObject = {name:"increase count ride",ridedate:Date.now(),is_active:true,sport:"hiking"};
+        const rideObject = {name:"TEST Ride: "+(new Date().toString()),ridedate:Date.now(),is_active:true,sport:"hiking"};
         const result = rd.newRide(rideObject);
         const after_count = await ridesCollection.count();
         expect(initial_count < after_count).toBeTrue();
