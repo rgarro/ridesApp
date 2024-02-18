@@ -21,6 +21,7 @@ class Ticker {
     mongoDatabase;
 
    constructor(mongodb){
+    console.log("instanciando ticker ..");
     console.log(typeof mongodb);
     //if(typeof mongodb = ""){}else{ throw new Error();}
     //this.mongoDatabase = mongodb;

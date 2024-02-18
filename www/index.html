@@ -137,8 +137,11 @@
             $('#rideDateInputID').val($.now());
             if(!rd.is_authenticated){
                 rd.authenticate();
+console.log("test the authenticate async..");                
+console.log(rd.is_authenticated);
+                rd.setMongoDB();
                 //set mongodb with repeat until is_authenticated
-                //console.log(rd.ACCESS_TOKEN);
+              console.log(rd.ACCESS_TOKEN);
             }
           }).bind(this));
 
@@ -150,7 +153,7 @@
             jsonFormData.ridedate = Date.now();
             jsonFormData.is_active = true;
             rd.newRide(jsonFormData);
-            //close modal , success noty here ..
+            //Close Modal , Success Noty Here ..
             return false;
           }).bind(this));
 
@@ -168,6 +171,7 @@
           }
       
           } catch (e) {
+            console.log("FREAKING BASTARD !!! JOTO DE LA PINCHE VERGA !!...");
             console.log("catching error...");
             console.log(e);
           }

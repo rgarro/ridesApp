@@ -30,10 +30,15 @@ describe("ridesApp",function(){
     });
 
     it("should have setMongoDB throw Error when called without authentication succeded",function(){
-        expect(rd.setMongoDB()).toThrow();
+        expect(rd.setMongoDB()).toThrowError();
     });
 
     it("should have database_is_set boolean property",function(){
+        expect(typeof rd.database_is_set == "boolean").toBeTrue();
+    });
+
+
+    it("should have database_is_set with false",function(){
         expect(rd.database_is_set).toBeFalse();
     });
 

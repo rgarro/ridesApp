@@ -47,6 +47,7 @@ class ridesApp {
      REALM_APP;//ridesappdb-ffygd
      mongodb;
      user;
+     database_is_set = false;
 
 
     constructor(){
@@ -72,8 +73,12 @@ class ridesApp {
     }
 
     async setMongoDB(){
-        //if(){}
-        this.mongodb = await this.user.mongoClient(this.dataSource);
+        if(this.is_authenticated){
+            this.mongodb = await this.user.mongoClient(this.dataSource);
+            this.database_is_set = true;
+        }else{
+            throw new Error("call authenticate first before setting mongoClient ..");
+        }
     }
 
     authenticate(){
