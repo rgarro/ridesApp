@@ -137,6 +137,7 @@
             $('#rideDateInputID').val($.now());
             if(!rd.is_authenticated){
                 rd.authenticate();
+                //set mongodb with repeat until is_authenticated
                 //console.log(rd.ACCESS_TOKEN);
             }
           }).bind(this));

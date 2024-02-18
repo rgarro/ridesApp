@@ -67,8 +67,13 @@ class ridesApp {
         // Authenticate the user
         this.user = await this.REALM_APP.logIn(credentials);//throw new Error("oops");
         // App.currentUser updates to match the logged in user
-        this.mongodb = await this.user.mongoClient(this.dataSource);
+        //this.mongodb = await this.user.mongoClient(this.dataSource);
         this.is_authenticated = true;
+    }
+
+    async setMongoDB(){
+        //if(){}
+        this.mongodb = await this.user.mongoClient(this.dataSource);
     }
 
     authenticate(){
