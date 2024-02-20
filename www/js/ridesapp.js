@@ -128,7 +128,7 @@ class ridesApp {
     async newRide(rideObject){
         const ridesCollection = this.mongodb.db(this.database).collection("Rides");
         const result = await ridesCollection.insertOne(rideObject);
-          console.log(result);
+        return result;
     }
 
     getLabels(){
