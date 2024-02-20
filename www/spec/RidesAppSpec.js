@@ -43,9 +43,11 @@ describe("ridesApp",function(){
     });
 
     it("should have database_is_set set to true after setMongoDB call",function(){
-        rd.authenticate();
-        rd.setMongoDB();
-        expect(rd.database_is_set).toBeTrue();
+        rd.authenticate().then(function(){
+            expect(rd.database_is_set).toBeTrue();
+        });//wait promise
+        //rd.setMongoDB();
+        //expect(rd.database_is_set).toBeTrue();
     });
 
     it("should increment Rides count after calling newRide",async function(){

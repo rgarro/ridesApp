@@ -137,10 +137,8 @@
             rd.compileTemplates();
             $('#rideDateInputID').val($.now());
             if(!rd.is_authenticated){
-                rd.authenticate();
-console.log("test the authenticate async..");                
-console.log(rd.is_authenticated);
-                rd.setMongoDB();
+               const ret = rd.authenticate();
+               //const ret = rd.myRealmAuthenticate();
                 //set mongodb with repeat until is_authenticated
               console.log(rd.ACCESS_TOKEN);
             }

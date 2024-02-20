@@ -68,21 +68,24 @@ class ridesApp {
         // Authenticate the user
         this.user = await this.REALM_APP.logIn(credentials);//throw new Error("oops");
         // App.currentUser updates to match the logged in user
-        //this.mongodb = await this.user.mongoClient(this.dataSource);
+        this.mongodb = await this.user.mongoClient(this.dataSource);
+        this.database_is_set = true;
         this.is_authenticated = true;
+        return this.is_authenticated;
     }
 
     async setMongoDB(){
         if(this.is_authenticated){
             this.mongodb = await this.user.mongoClient(this.dataSource);
             this.database_is_set = true;
+            return this.database_is_set;
         }else{
             throw new Error("call authenticate first before setting mongoClient ..");
         }
     }
 
-    authenticate(){
-        this.myRealmAuthenticate();
+    async authenticate(){
+       return await this.myRealmAuthenticate();
     }
 
     ajaxAuthenticate(){
