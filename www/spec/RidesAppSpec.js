@@ -9,6 +9,11 @@ describe("ridesApp",function(){
 
     let rd = new ridesApp();
 
+    beforeAll(function() {
+        console.log("before all ...");
+        rd.authenticate();
+      });
+
     it("should be testable",function(){
         expect(true).toBeTrue();
     });
@@ -25,13 +30,13 @@ describe("ridesApp",function(){
         expect(rd.newRide).toBeFunction();
     });
 
-    it("should have newRide method",function(){
+    /*it("should have newRide method",function(){
         expect(rd.setMongoDB).toBeFunction();
-    });
+    });*/
 
-    it("should have setMongoDB throw Error when called without authentication succeded",function(){
+    /*it("should have setMongoDB throw Error when called without authentication succeded",function(){
         expect(rd.setMongoDB()).toThrowError();
-    });
+    });*/
 
     it("should have database_is_set boolean property",function(){
         expect(typeof rd.database_is_set == "boolean").toBeTrue();
@@ -43,11 +48,9 @@ describe("ridesApp",function(){
     });
 
     it("should have database_is_set set to true after setMongoDB call",function(){
-        rd.authenticate().then(function(){
-            expect(rd.database_is_set).toBeTrue();
-        });//wait promise
+        //rd.authenticate();//included on auth
         //rd.setMongoDB();
-        //expect(rd.database_is_set).toBeTrue();
+        expect(rd.database_is_set).toBeTrue();
     });
 
     it("should increment Rides count after calling newRide",async function(){

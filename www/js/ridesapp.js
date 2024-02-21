@@ -134,16 +134,4 @@ class ridesApp {
         return result;
     }
 
-    getLabels(){
-        
-    }
-
-    setLabel(id){
-        
-    }
-
-    deleteLabel(){
-
-    }
-
 } 

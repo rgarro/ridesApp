@@ -133,14 +133,13 @@
           try {
            var rd = new ridesApp();
            var tick;
+           var rideModal
           $(document).ready((function() {
+            rideModal = new bootstrap.Modal('#rideModal');
             rd.compileTemplates();
             $('#rideDateInputID').val($.now());
             if(!rd.is_authenticated){
                const ret = rd.authenticate();
-               //const ret = rd.myRealmAuthenticate();
-                //set mongodb with repeat until is_authenticated
-              console.log(rd.ACCESS_TOKEN);
             }
           }).bind(this));
 
@@ -152,9 +151,10 @@
             jsonFormData.ridedate = Date.now();
             jsonFormData.is_active = true;
             var res = rd.newRide(jsonFormData);
-            console.log(res);
-            $.notify("Hello World","success");
-            //Close Modal , Success Noty Here ..
+            document.getElementById("rideFRM").reset();
+            const modalToggle = document.getElementById('rideModal'); 
+            rideModal.hide(modalToggle);
+            $.notify("NEW RIDE SAVED","success");
             return false;
           }).bind(this));
 
