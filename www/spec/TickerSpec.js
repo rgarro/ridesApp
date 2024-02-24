@@ -44,7 +44,7 @@
     });
 
     it("should have addTick method",function(){
-        
+        expect(tick.addTick).toBeFunction();
     });
 
     it("should have startLoop method",function(){

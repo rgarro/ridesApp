@@ -27,4 +27,12 @@ class Ticker {
     //this.mongoDatabase = mongodb;
    }
 
+   activeRideExist(){
+
+   }
+
+   addTick(){
+    
+   }
+
 } 
