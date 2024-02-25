@@ -35,4 +35,20 @@ class Ticker {
     
    }
 
+   stopLoop(){
+
+   }
+
+   tickingLoop(){
+
+   }
+
+   setTimestamp(){
+
+   }
+
+   setCoordinates(){
+    
+   }
+
 } 
