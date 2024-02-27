@@ -19,6 +19,7 @@
 class Ticker {
 
     mongoDatabase;
+    currentRide;
 
    constructor(mongodb){
     console.log("instanciando ticker ..");

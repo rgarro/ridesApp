@@ -66,4 +66,16 @@
         expect(tick.setCoordinates).toBeFunction();
     });
 
+    it("should have currentRide property",function(){
+        expect(typeof tick.currentRide != null).toBeTrue();
+    });
+
+    it("should have setCurrentRide method",function(){
+        expect(tick.setCurrentRide).toBeFunction();
+    });
+
+    it("should setCurrentRide verify ride is active before setting",function(){
+        
+    });
+
 });
