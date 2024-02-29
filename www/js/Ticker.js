@@ -20,16 +20,27 @@ class Ticker {
 
     mongoDatabase;
     currentRide;
+    database = "ridesappdb";
 
    constructor(mongodb){
     console.log("instanciando ticker ..");
     console.log(typeof mongodb);
-    //if(typeof mongodb = ""){}else{ throw new Error();}
+    if(typeof mongodb == "object"){
+        this.mongoDatabase = mongodb;
+    }else{ 
+        throw new Error("Invalid Database Type ...");
+    }
     //this.mongoDatabase = mongodb;
    }
 
-   activeRideExist(){
-
+   async activeRideExist(rideID){
+    const ridesCollection = this.mongoDatabase.db(this.database).collection("Rides");
+    const ridesFound = await ridesCollection.count();
+    if(ridesFound){
+        return true;
+    }else{
+        return false;
+    }
    }
 
    addTick(){
