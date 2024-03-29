@@ -30,9 +30,9 @@
     });
 
     it("should activeRideExist return O on invalid rideID",function(){
-        const invalidRideID = sha1("fernando el de solcom roba");
+        const invalidRideID = sha1("qwertyasdf");
         //var hash = sha1.create();
-        //hash.update('fernando el de solcom roba');
+        //hash.update('qwertyasdf');
         //hash.hex();
         expect(tick.activeRideExist(invalidRideID)==0).toBeTrue();
     });
