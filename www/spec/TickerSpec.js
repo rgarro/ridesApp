@@ -20,8 +20,10 @@
         expect(true).toBeTrue();
     });
 
-    it("should check mongodb is valid type",function(){
-        tick = new Ticker(rd.mongodb.db(rd.database));
+    it("should check mongodb is valid type",async function(){
+        tick = await new Ticker(rd.mongodb.db(rd.database));
+console.log("tick:");
+        console.log(tick);        
         expect(typeof rd.mongodb.db(rd.database) == "Object").toBeTrue();
     });
 
