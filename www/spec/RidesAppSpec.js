@@ -1,6 +1,9 @@
 /**
- * Uncle sam owns snowbird , mr lehi with all mighty starcruiser ..
- * lemur and laman will abandon jerusalem before defend it
+ * Uncle sam owns snowbird, smoking a joint with Beck ...
+ * Beck is the redhair , birdie is lost , snoopy found $60 on the road
+ * I found a joint on this.kimball() Function bridge, I swear god I found it
+ * Alabama Satan Alabama satan has opreys and f22's  please increase
+ * my expedia balance ...
  * 
  * 
  *@author Rolando<rgarro@gmail.com>

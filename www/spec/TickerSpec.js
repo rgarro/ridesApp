@@ -74,8 +74,8 @@
         expect(tick.setCurrentRide).toBeFunction();
     });
 
-    it("should setCurrentRide verify ride is active before setting",function(){
+    /*it("should setCurrentRide verify ride is active before setting",function(){
         
-    });
+    });*/
 
 });
