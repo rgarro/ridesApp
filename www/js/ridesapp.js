@@ -115,6 +115,12 @@ class ridesApp {
           });
     }
 
+    async activeRidesSelectInput(){
+        //console.log("Je mange le poulet rouge ..");
+        const ridesCollection = this.mongodb.db(this.database).collection("Rides");
+        var ridesData = await ridesCollection.find({is_active : true});
+    }
+
     async getRides(){
         //console.log("Je mange le poulet rouge ..");
         const ridesCollection = this.mongodb.db(this.database).collection("Rides");
