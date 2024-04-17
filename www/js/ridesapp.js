@@ -121,7 +121,7 @@ class ridesApp {
         var ridesData = await ridesCollection.find({is_active : true});
         var input_options_html = "";
         for (var i = 0; i < ridesData.length; i++){
-            input_options_html += "<option>";
+            input_options_html += "<option value='"+ridesData[i].name+"'>" + ridesData[i].name+"</option>";
         }
     }
 
