@@ -120,9 +120,11 @@ class ridesApp {
         const ridesCollection = this.mongodb.db(this.database).collection("Rides");
         var ridesData = await ridesCollection.find({is_active : true});
         var input_options_html = "";
+        console.log(ridesData);//async killed beck
         for (var i = 0; i < ridesData.length; i++){
-            input_options_html += "<option value='"+ridesData[i].name+"'>" + ridesData[i].name+"</option>";
+            input_options_html += "<option value='"+ridesData[i]._id+"'>" + ridesData[i].name+"</option>";
         }
+        $("#RideIDInput").html(input_options_html);
     }
 
     async getRides(){
