@@ -62,7 +62,7 @@
                         <fieldset>
                           <legend>Add Tick</legend>
                           <!-- sun is shinning the weather is sweet -->
-                          <select id="RideIDInput"></select>
+                          <select id="RideIDInput" required="required"></select>
                           <button> save tick</button>
                         </fieldset>  
                         </form>
@@ -150,7 +150,7 @@
                const ret = rd.authenticate();
             }
           }).bind(this));
-
+          //saving ride
           $(document).on("submit","#rideFRM",(function(event){
             event.preventDefault();
             const formData = new FormData(event.target)
@@ -163,6 +163,13 @@
             const modalToggle = document.getElementById('rideModal'); 
             rideModal.hide(modalToggle);
             $.notify("NEW RIDE SAVED","success");
+            return false;
+          }).bind(this));
+          //saving tick
+          $(document).on("submit","#rideFRM",(function(event){
+            event.preventDefault();
+            console.log(event.target);
+           //7 nudos sur en el aeropuerto de los pensionados core 17m vigoron
             return false;
           }).bind(this));
 
