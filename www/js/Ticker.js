@@ -45,7 +45,7 @@ class Ticker {
     }
    }
 
-   addTick(){
+   addTick(tickObject){
     
    }
 
