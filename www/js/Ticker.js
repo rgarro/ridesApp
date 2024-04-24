@@ -23,6 +23,7 @@ class Ticker {
     mongoDatabase;
     currentRide;
     database = "ridesappdb";
+    keep_ticking=false;
 
    constructor(mongodb){
     console.log("instanciando ticker ..");
@@ -54,6 +55,9 @@ class Ticker {
    }
 
    tickingLoop(){
+    if(this.keep_ticking){
+           
+    }
 
    }
 
