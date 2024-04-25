@@ -187,12 +187,15 @@
           }).bind(this));
 
           function rideslist(){
+            this.tick = new Ticker(rd.mongodb.db(rd.database));
+console.log(this.tick);
             console.log("rideslist");
             rd.getRides();
             setPosition();
           };
 
           function setPosition(){
+            this.tick.setCoordinates();
             console.log("set position ..");
           };
 
