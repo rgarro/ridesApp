@@ -11,8 +11,8 @@
  *   //|\__/  \\  \
  *   \_-\_____/  \-\
  *        // \\--\|  Every Ride is Ticking stacks  ...
- *   ____//  ||_
- *  /_____\ /___\  
+ *   ____//  ||_     android watch version not available
+ *  /_____\ /___\    will tick stacks along the ride for further geo mashup analisis
  * 
  * 
  * 
