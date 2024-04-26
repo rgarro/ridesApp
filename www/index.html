@@ -52,7 +52,7 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" onclick="setTicker()" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <button class="accordion-button collapsed" onclick="setTickerFrm()" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                       Ticker
                     </button>
                   </h2>
@@ -153,7 +153,8 @@
           //try - catch -- a wave <> ...
           try {
            var rd = new ridesApp();
-           var tick;
+           var tick;//stack_ticker
+           var stack_ticker_is_set = false;
            var rideModal;
            var last_ride_id;
           $(document).ready((function() {
@@ -167,8 +168,8 @@
           //saving the ride ...
           $(document).on("submit","#rideFRM",(function(event){
             event.preventDefault();
-            const formData = new FormData(event.target)
-            //var jsonFormData = JSON.stringify(Object.fromEntries(formData));
+            const formData = new FormData(event.target);
+            //var stringFormData = JSON.stringify(Object.fromEntries(formData));
             var jsonFormData = Object.fromEntries(formData);
             jsonFormData.ridedate = Date.now();
             jsonFormData.is_active = true;
@@ -179,21 +180,24 @@
             $.notify("NEW RIDE SAVED","success");
             return false;
           }).bind(this));
-          //saving tick
-          $(document).on("submit","#rideFRM",(function(event){
+          //saving tick, un sayayin con androide mato a vegueta ...
+          $(document).on("submit","#addTickFRM",(function(event){
             event.preventDefault();
             console.log(event.target);
+            const formData = new FormData(event.target);
+            var jsonFormData = Object.fromEntries(formData);
+            //jsonFormData.is_active = true;
+            this.last_ride_id = jsonFormData.rides_id;
            //7 nudos sur en el aeropuerto de los pensionados core 17m vigoron
+           var res = this.tick.addTick(jsonFormData);
+            //document.getElementById("addTickFRM").reset();
+            $.notify("Stack SAVED","success");
             return false;
           }).bind(this));
 
           function rideslist(){
-            this.tick = new Ticker(rd.mongodb.db(rd.database));
-console.log(this.tick);
             console.log("rideslist");
             rd.getRides();
-            setPosition();
-            setTimestamp();
           };
 
           function setPosition(){
@@ -211,9 +215,17 @@ console.log(this.tick);
             document.getElementById("stackDateID").value = this.tick.current_timestamp;
           };
 
-          function setTicker(){
-            console.log("setting ticker ..");
-          }
+          function setTickerFrm(){
+            if(!this.stack_ticker_is_set){
+              this.tick = new Ticker(rd.mongodb.db(rd.database));
+              this.stack_ticker_is_set = true;
+console.log("setting ticker");              
+console.log(this.tick);
+            }
+            setPosition();
+            setTimestamp();
+            this.rd.activeRidesSelectInput();
+          };
 
           function deactivateRide(id){
               console.log(id);

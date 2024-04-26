@@ -10,7 +10,7 @@
  *     //  \ \\   ___-
  *   //|\__/  \\  \
  *   \_-\_____/  \-\
- *        // \\--\|  Fume Mota  ...
+ *        // \\--\|  Compre Mota por el Peaje de Naranjo  ...
  *   ____//  ||_
  *  /_____\ /___\  
  * 
@@ -40,7 +40,7 @@ class Ticker {
 
    async activeRideExist(rideID){
     const ridesCollection = this.mongoDatabase.db(this.database).collection("Rides");
-    const ridesFound = await ridesCollection.count();
+    const ridesFound = await ridesCollection.count({_id:rideID});
     if(ridesFound){
         return true;
     }else{
@@ -48,8 +48,10 @@ class Ticker {
     }
    }
 
-   addTick(tickObject){
-    
+   async addTick(stackObject){
+    const stacksCollection = this.mongoDatabase.db(this.database).collection("Stacks");
+    const result = await stacksCollection.insertOne(stackObject);
+    return result;
    }
 
    stopLoop(){
