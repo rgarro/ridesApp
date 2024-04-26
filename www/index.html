@@ -196,7 +196,10 @@ console.log(this.tick);
 
           function setPosition(){
             this.tick.setCoordinates();
-            console.log("set position ..");
+            console.log("reviewing pos ..");
+            console.log(this.tick.pos);
+            document.getElementById("latitudeID").value = this.tick.pos.coords.latitude;
+            document.getElementById("longitudeID").value = this.tick.pos.coords.longitude;
           };
 
           function setTimestamp(){
