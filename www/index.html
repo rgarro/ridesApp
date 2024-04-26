@@ -154,7 +154,8 @@
           try {
            var rd = new ridesApp();
            var tick;
-           var rideModal
+           var rideModal;
+           var last_ride_id;
           $(document).ready((function() {
             rideModal = new bootstrap.Modal('#rideModal');
             rd.compileTemplates();
