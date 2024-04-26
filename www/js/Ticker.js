@@ -10,7 +10,7 @@
  *     //  \ \\   ___-
  *   //|\__/  \\  \
  *   \_-\_____/  \-\
- *        // \\--\|  Compren Mota por el Mercado Borbon ...
+ *        // \\--\|  Fume Mota  ...
  *   ____//  ||_
  *  /_____\ /___\  
  * 
@@ -25,6 +25,7 @@ class Ticker {
     database = "ridesappdb";
     keep_ticking=false;
     pos;
+    current_timestamp;
 
    constructor(mongodb){
     console.log("instanciando ticker ..");
@@ -63,7 +64,7 @@ class Ticker {
    }
 
    setTimestamp(){
-
+    this.current_timestamp = Date.now();
    }
 
    setCoordinates(){

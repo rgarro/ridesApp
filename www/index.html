@@ -150,7 +150,7 @@
         <script src="js/ridesapp.js"></script>
         <script src="js/Ticker.js"></script> 
         <script>
-          //try - catch -- a wave ...
+          //try - catch -- a wave <> ...
           try {
            var rd = new ridesApp();
            var tick;
@@ -163,7 +163,7 @@
                const ret = rd.authenticate();
             }
           }).bind(this));
-          //saving ride
+          //saving the ride ...
           $(document).on("submit","#rideFRM",(function(event){
             event.preventDefault();
             const formData = new FormData(event.target)
@@ -192,6 +192,7 @@ console.log(this.tick);
             console.log("rideslist");
             rd.getRides();
             setPosition();
+            setTimestamp();
           };
 
           function setPosition(){
@@ -203,7 +204,10 @@ console.log(this.tick);
           };
 
           function setTimestamp(){
-            console.log("set timestamp ..");
+            this.tick.setTimestamp();
+            console.log("seting time");
+            console.log(this.tick.current_timestamp);
+            document.getElementById("stackDateID").value = this.tick.current_timestamp;
           };
 
           function setTicker(){
