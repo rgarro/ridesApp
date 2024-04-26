@@ -10,7 +10,7 @@
  *     //  \ \\   ___-
  *   //|\__/  \\  \
  *   \_-\_____/  \-\
- *        // \\--\|  Compre Mota por el Peaje de Naranjo  ...
+ *        // \\--\|  Every Ride is Ticking stacks  ...
  *   ____//  ||_
  *  /_____\ /___\  
  * 
