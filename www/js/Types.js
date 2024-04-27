@@ -8,9 +8,8 @@
  *      ): :(
  *      :o_o: 
  *       "-"  
- * Every stack has a type  ...
+ * Every Ride has a sport string supplied by Types , typename  ...
  * android watch version not available
- * stacks types inner joint ... 
  * 
  * 
  * @author Rolando<rgarro@gmail.com>
@@ -26,20 +25,16 @@ class Types {
             throw new Error("Invalid Database Type ...");
         }
     }
-
-    async selectInput(){
-        console.log("Je mange le poulet noir ..");
+    
+    async sportNameSelectInput(){
+        console.log("Je mange le poulet jaune ..");
         const typesCollection = this.mongoDatabase.db(this.database).collection("Types");
         var typesData = await typesCollection.find();
         var input_options_html = "";
         console.log(typesData);
         for (var i = 0; i < typesData.length; i++){
-            input_options_html += "<option value='"+typesData[i]._id+"'>" + typesData[i].typename+"</option>";
+            input_options_html += "<option>" + typesData[i].typename+"</option>";
         }
-        $("#TypeIDInput").html(input_options_html);
-    }
-    
-    async sportNameSelectInput(){
-
+        $("#rideSportInput").html(input_options_html);
     }
 }

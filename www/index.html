@@ -61,9 +61,8 @@
                       <form id="addTickFRM">
                         <fieldset>
                           <legend>Add Tick</legend>
-                          <!-- sun is shinning the weather is sweet -->
+                          <!-- Banco Nacional Solaris Sun is shinning the weather is sweet -->
                           <select id="RideIDInput" name="rides_id" required="required"></select>
-                          <select id="TypeIDInput" name="types_id" required="required"></select>
                           <input type="hidden" name="stackdate" id="stackDateID" value=""/>
                           <input type="hidden" name="latitude" id="latitudeID" value=""/>
                           <input type="hidden" name="longitude" id="longitudeID" value=""/>
@@ -112,8 +111,7 @@
     </div>
     <div class="mb-3">
       <label for="rideSportInput" class="form-label">Sport</label>
-      <select id="rideSportInput" name="sport">
-        <option>Hiking</option>
+      <select id="rideSportInput" name="sport" required="required">
       </select>
     </div>
     <div class="mb-3">
@@ -152,6 +150,8 @@
            var stack_ticker_is_set = false;
            var rideModal;
            var last_ride_id;
+           var types;
+           var types_object_is_set = false;
           $(document).ready((function() {
             rideModal = new bootstrap.Modal('#rideModal');
             rd.compileTemplates();
@@ -160,6 +160,15 @@
                const ret = rd.authenticate();
             }
           }).bind(this));
+
+          $('#rideModal').on('shown.bs.modal', (function () {
+            if(!types_object_is_set){
+              this.types = new Types(rd.mongodb.db(rd.database));
+              this.types_object_is_set = true;
+            }
+            this.types.sportNameSelectInput();
+          }).bind(this));
+
           //saving the ride ...
           $(document).on("submit","#rideFRM",(function(event){
             event.preventDefault();
