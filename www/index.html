@@ -69,12 +69,6 @@
                           <input type="hidden" name="longitude" id="longitudeID" value=""/>
                           <textarea name="note" rows="5" cols="33" placeholder="Note">
                           </textarea>
-                          <!-- 
-                            stackdate Timestamp({ t: 1705957895, i: 11 })
-                            latitude 9.9581455
-                            longitude -84.070537
-                            note "jejeje"
-                          -->
                           <input type="reset" class="btn btn-danger" value="Reset">
                           <input type="submit" class="btn btn-primary" value="Save">
                         </fieldset>  
@@ -148,7 +142,8 @@
         <script src="cordova.js"></script>
         <script src="js/index.js"></script>
         <script src="js/ridesapp.js"></script>
-        <script src="js/Ticker.js"></script> 
+        <script src="js/Ticker.js"></script>
+        <script src="js/Types.js"></script>  
         <script>
           //try - catch -- a wave <> ...
           try {
@@ -195,6 +190,7 @@
             return false;
           }).bind(this));
 
+               
           function rideslist(){
             console.log("rideslist");
             rd.getRides();
