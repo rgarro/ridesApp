@@ -79,6 +79,8 @@ class Ticker {
 
    
    showPosition(position){
+    console.log("show position");
+    console.log(position);
      //position.coords.latitude + position.coords.longitude;
      this.pos = position;
    }

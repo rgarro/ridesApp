@@ -60,16 +60,19 @@
                     <div class="accordion-body">
                       <form id="addTickFRM">
                         <fieldset>
-                          <legend>Add Tick</legend>
-                          <!-- Banco Nacional Solaris Sun is shinning the weather is sweet -->
-                          <select id="RideIDInput" name="rides_id" required="required"></select>
-                          <input type="hidden" name="stackdate" id="stackDateID" value=""/>
-                          <input type="hidden" name="latitude" id="latitudeID" value=""/>
-                          <input type="hidden" name="longitude" id="longitudeID" value=""/>
-                          <textarea name="note" rows="5" cols="33" placeholder="Note">
-                          </textarea>
-                          <input type="reset" class="btn btn-danger" value="Reset">
+                          <div class="mb-3">
+                            <legend>Add Tick</legend>
+                            <!-- Sun is shinning the weather is sweet -->
+                            <select id="RideIDInput" name="rides_id" required="required"></select>
+                            <input type="hidden" name="stackdate" id="stackDateID" value=""/>
+                            <input type="hidden" name="latitude" id="latitudeID" value=""/>
+                            <input type="hidden" name="longitude" id="longitudeID" value=""/>
+                            <textarea name="note" rows="5" cols="33" placeholder="Note">
+                            </textarea></div>
+                          <div class="mb-3">
+                            <input type="reset" class="btn btn-danger" value="Reset">
                           <input type="submit" class="btn btn-primary" value="Save">
+                          </div>
                         </fieldset>  
                         </form>
                       
