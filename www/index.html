@@ -63,7 +63,7 @@
                           <div class="mb-3">
                             <legend>Add Tick</legend>
                             <!-- Sun is shinning the weather is sweet -->
-                            <select id="RideIDInput" name="rides_id" required="required"></select>
+                            <select id="RideIDInput" name="rides_id" required="required"></select><br>
                             <input type="hidden" name="stackdate" id="stackDateID" value=""/>
                             <input type="hidden" name="latitude" id="latitudeID" value=""/>
                             <input type="hidden" name="longitude" id="longitudeID" value=""/>
@@ -204,22 +204,15 @@
 
                
           function rideslist(){
-            console.log("rideslist");
             rd.getRides();
           };
 
           function setPosition(){
             this.tick.setCoordinates();
-            console.log("reviewing pos ..");
-            console.log(this.tick.pos);
-            document.getElementById("latitudeID").value = this.tick.pos.coords.latitude;
-            document.getElementById("longitudeID").value = this.tick.pos.coords.longitude;
           };
 
           function setTimestamp(){
             this.tick.setTimestamp();
-            console.log("seting time");
-            console.log(this.tick.current_timestamp);
             document.getElementById("stackDateID").value = this.tick.current_timestamp;
           };
 
@@ -227,8 +220,6 @@
             if(!this.stack_ticker_is_set){
               this.tick = new Ticker(rd.mongodb.db(rd.database));
               this.stack_ticker_is_set = true;
-console.log("setting ticker");              
-console.log(this.tick);
             }
             setPosition();
             setTimestamp();

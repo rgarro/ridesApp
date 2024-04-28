@@ -24,7 +24,7 @@ class Ticker {
     currentRide;
     database = "ridesappdb";
     keep_ticking=false;
-    pos;
+    pos = {};
     current_timestamp;
 
    constructor(mongodb){
@@ -79,10 +79,13 @@ class Ticker {
 
    
    showPosition(position){
-    console.log("show position");
+    console.log("show position3");
+    console.log(position.coords.latitude);
     console.log(position);
      //position.coords.latitude + position.coords.longitude;
-     this.pos = position;
+     //this.pos = position;
+     document.getElementById("latitudeID").value = position.coords.latitude;
+     document.getElementById("longitudeID").value = position.coords.longitude;
    }
 
 } 
