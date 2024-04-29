@@ -86,6 +86,7 @@ class Ticker {
      //this.pos = position;
      document.getElementById("latitudeID").value = position.coords.latitude;
      document.getElementById("longitudeID").value = position.coords.longitude;
+     document.getElementById("altitudeID").value = position.coords.altitude;
    }
 
 } 
