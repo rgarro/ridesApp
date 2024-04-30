@@ -28,8 +28,6 @@ class Ticker {
     current_timestamp;
 
    constructor(mongodb){
-    console.log("instanciando ticker ..");
-    console.log(typeof mongodb);
     if(typeof mongodb == "object"){
         this.mongoDatabase = mongodb;
     }else{ 
@@ -80,10 +78,9 @@ class Ticker {
    
    showPosition(position){
     console.log("show position3");
-    console.log(position.coords.latitude);
+   
     console.log(position);
-     //position.coords.latitude + position.coords.longitude;
-     //this.pos = position;
+    
      document.getElementById("latitudeID").value = position.coords.latitude;
      document.getElementById("longitudeID").value = position.coords.longitude;
      document.getElementById("altitudeID").value = position.coords.altitude;

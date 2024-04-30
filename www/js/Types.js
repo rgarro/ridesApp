@@ -27,7 +27,6 @@ class Types {
     }
     
     async sportNameSelectInput(){
-        console.log("Je mange le poulet jaune ..");
         const typesCollection = this.mongoDatabase.db(this.database).collection("Types");
         var typesData = await typesCollection.find();
         var input_options_html = "";
