@@ -77,10 +77,6 @@ class Ticker {
 
    
    showPosition(position){
-    console.log("show position3");
-   
-    console.log(position);
-    
      document.getElementById("latitudeID").value = position.coords.latitude;
      document.getElementById("longitudeID").value = position.coords.longitude;
      document.getElementById("altitudeID").value = position.coords.altitude;

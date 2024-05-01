@@ -51,7 +51,6 @@ class ridesApp {
 
 
     constructor(){
-        //console.log("el android compilara ...");
         this.REALM_APP = new Realm.App({ id: this.REALM_PID });//que ladre el DES(madre)
         //console.log("realm:"+this.REALM_APP);
     }
@@ -116,7 +115,6 @@ class ridesApp {
     }
 
     async activeRidesSelectInput(){
-        console.log("Je mange le poulet rouge ..");
         const ridesCollection = this.mongodb.db(this.database).collection("Rides");
         var ridesData = await ridesCollection.find({is_active : true});
         var input_options_html = "";
