@@ -22,7 +22,7 @@
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button class="accordion-button" type="button" onclick="ridesAppTab()" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                       RidesApp
                     </button>
                   </h2>
@@ -165,14 +165,6 @@
             }
           }).bind(this));
 
-          $('#rideModal').on('shown.bs.modal', (function () {
-            if(!types_object_is_set){
-              this.types = new Types(rd.mongodb.db(rd.database));
-              this.types_object_is_set = true;
-            }
-            this.types.sportNameSelectInput();
-          }).bind(this));
-
           //saving the ride ...
           $(document).on("submit","#rideFRM",(function(event){
             event.preventDefault();
@@ -188,7 +180,7 @@
             $.notify("NEW RIDE SAVED","success");
             return false;
           }).bind(this));
-          //saving ticstack on a tick ...
+          //saving stack on a tick ...
           $(document).on("submit","#addTickFRM",(function(event){
             event.preventDefault();
             console.log(event.target);
@@ -215,6 +207,11 @@
           function setTimestamp(){
             this.tick.setTimestamp();
             document.getElementById("stackDateID").value = this.tick.current_timestamp;
+          };
+
+          function ridesAppTab(){
+            //console.log("ridesAppTab");
+            this.rd.sportNameSelectInput();
           };
 
           function setTickerFrm(){

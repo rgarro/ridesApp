@@ -125,6 +125,17 @@ class ridesApp {
         $("#RideIDInput").html(input_options_html);
     }
 
+    async sportNameSelectInput(){    
+                const typesCollection = this.mongodb.db(this.database).collection("Types");
+                var typesData = await typesCollection.find();
+                var input_options_html = "";
+                console.log(typesData);
+                for (var i = 0; i < typesData.length; i++){
+                    input_options_html += "<option>" + typesData[i].typename+"</option>";
+                }
+                $("#rideSportInput").html(input_options_html);
+            }
+
     async getRides(){
         const ridesCollection = this.mongodb.db(this.database).collection("Rides");
         var ridesData = await ridesCollection.find({is_active : true});

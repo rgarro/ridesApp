@@ -1,14 +1,6 @@
 /**
- * ,           ,
- * /             \
- *((__-^^-,-^^-__))
- * `-_---' `---_-'
- *  <__|o` 'o|__>
- *     \  `  /
- *      ): :(
- *      :o_o: 
- *       "-"  
- * Every ride has a type.
+ *  
+ * Every ride has a type.    
  *  
  * android watch version not available
  * 
@@ -28,6 +20,8 @@ class Types {
     }
     
     async sportNameSelectInput(){
+console.log("sportsname select"); 
+console.log(this.mongoDatabase.db);       
         const typesCollection = this.mongoDatabase.db(this.database).collection("Types");
         var typesData = await typesCollection.find();
         var input_options_html = "";
