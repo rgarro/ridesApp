@@ -8,10 +8,7 @@
  *      ): :(
  *      :o_o: 
  *       "-"  
- * Quincho es homosexual segun un siquiatra de la fiscalia   ...
- * pero por mientras le fumo el kilo de mota y los cien cartuchos CBD que me regalaron los de la Fuerza Publica
- * pijiar a quincho da payasa y mucha risa, joto mas homosexual!! le gusta cachetear gente en capillas!! y es culpable de daños.
- * Si lo asesina el doctor de alguna victima yo prometi ir a blasfemarle al vaticano me cago en su dios!! y poner una piedra de donde fue culpable ....
+ * Every ride has a type.
  *  
  * android watch version not available
  * 
